@@ -1,12 +1,14 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const namer = require('./namer');
+const app = express()
 
-var port = 8000;
+const port = 8000;
 
-app.get('/', function (req, res) {
-  res.send('Hello World');
+app.get('/:name', (req, res) => {
+  var name = req.params.name;
+  res.send(namer.greet(name));
 });
 
-app.listen(port, function() {
+app.listen(port, () => {
   console.log('Example app listening on port 8000');
 });
