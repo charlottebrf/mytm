@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/charlottebrf/mytm#readme",
   "dependencies": {
+    "express": "^4.15.3",
     "mocha": "^3.4.2"
   },
   "devDependencies": {
