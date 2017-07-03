@@ -60,4 +60,5 @@ We are not afraid of new technologies
 - Improve understanding of Javascript
 - Use multiple technologies on a single project
 - Strong team communication with [waffle](https://waffle.io/charlottebrf/mytm) and [slack](https://slack.com/)
+- Use Agile & XP values
 ```
