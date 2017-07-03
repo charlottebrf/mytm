@@ -1,4 +1,5 @@
-# mytm
+### MAP YOUR TECH MIND
+
 Map Your Tech Mind! An interactive mind mapping tool for programmers
 
 ```
@@ -35,4 +36,26 @@ I would like to style my ideas
 As a user,
 So that I can return to my beautifully organised ideas,
 I would like to save and load a mind map
+```
+
+# TEAM MAP YOUR TECH MIND CHARTER
+```
+We have stand ups at 10:00am
+We check in at 2:30pm
+We reassess our MVP everyday
+We commit in the present tense
+We commit little and often
+We thoroughly review code before merging
+We value frontend development
+But the backend should probably work too
+Wellbeing comes first
+We are not afraid of new technologies
+```
+
+# TEAM OBJECTIVES
+```
+- Learn Canvas
+- Improve front end testing abilities
+- Improve understanding of Javascript
+- Use multiple technologies on a single project
 ```
