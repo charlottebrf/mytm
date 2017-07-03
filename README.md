@@ -1,6 +1,6 @@
-### MAP YOUR TECH MIND
+### MIND MAPP
 
-Map Your Tech Mind! An interactive mind mapping tool for programmers
+Mind Mapp: An interactive mind mapping tool for programmers
 
 ```
 As a user,
@@ -54,8 +54,10 @@ We are not afraid of new technologies
 
 # TEAM OBJECTIVES
 ```
+- Enjoy the learning experience
 - Learn Canvas
 - Improve front end testing abilities
 - Improve understanding of Javascript
 - Use multiple technologies on a single project
+- Strong team communication with [waffle](https://waffle.io/charlottebrf/mytm) and [slack](https://slack.com/)
 ```
