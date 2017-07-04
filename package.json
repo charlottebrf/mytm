@@ -18,7 +18,8 @@
   "homepage": "https://github.com/charlottebrf/mytm#readme",
   "dependencies": {
     "express": "^4.15.3",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "pug": "^2.0.0-rc.2"
   },
   "devDependencies": {
     "zombie": "^5.0.7"
