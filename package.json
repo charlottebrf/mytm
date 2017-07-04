@@ -1,0 +1,26 @@
+{
+  "name": "mytm",
+  "version": "1.0.0",
+  "description": "A mind mapping tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlottebrf/mytm.git"
+  },
+  "author": "Team MYTM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charlottebrf/mytm/issues"
+  },
+  "homepage": "https://github.com/charlottebrf/mytm#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "mocha": "^3.4.2"
+  },
+  "devDependencies": {
+    "zombie": "^5.0.7"
+  }
+}
