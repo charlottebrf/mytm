@@ -8,6 +8,7 @@ const port = 8000
 
 app.set('views', './views')
 app.set('view engine', 'pug')
+app.use(express.static('public'))
 
 app.get('/:name', (req, res) => {
   var name = req.params.name;

@@ -18,6 +18,10 @@ describe('User sees blank canvas', function() {
     this.browser.assert.element('#canvas');
   });
 
+  it('should show an addded object', function() {
+    this.browser.assert.element('#test-object')
+  });
+
 
   after(function(done) {
     this.server.close(done);

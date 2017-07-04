@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script type="text/javascript" src ="../src/server.js"></script>
+    <script type="text/javascript" src ="../src/namer.js"></script>
+    <!-- <script>
+      var canvas = document.querySelector("canvas");
+      var context = canvas.getContext("2d");
+      context.fillStyle = 'red';
+      context.fillRect(10, 100, 50)
+    </script> -->
+
+
+  </head>
+  <body>
+
+    h2= greeting
+    <canvas id="canvas" width="300" height="300" style="border:1px solid fuchsia;"> </canvas>
+    <!-- <button onclick="myFunction()">Try it</button> -->
+    <script>
+    function myFunction() {
+      var c = document.getElementById('canvas');
+      var ctx = c.getContext('2d');
+      ctx.rect(20, 20, 150, 100)
+      ctx.stroke()
+    }
+    </script>
+
+  </body>
+</html>
