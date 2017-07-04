@@ -1,28 +1,26 @@
+const http = require('http');
+process.env.NODE_ENV = 'test';
+const app = require('../src/server');
 const Browser = require('zombie');
-var http = require('http');
 
 describe('User visits app', function() {
 
   before(function() {
-    this.server = http.createServer(function (req, res) {
-      res.writeHead(200, {'Content-Type': 'text/plain'});
-      res.end('okay');
-    });
-
-    this.server.listen(8080, '127.0.0.1');
+    this.server = http.createServer(app).listen(8080);
     this.browser = new Browser({ site: 'http://localhost:8080'});
-  })
+  });
 
-before(function(done) {
-  this.browser.visit('/', done);
-});
+  before (function(done) {
+    this.browser.visit('/DrChaz', done);
+  });
 
-it('should be successful', function() {
-  this.browser.assert.success();
-});
+  it('should see welcome page', function() {
+    // this.browser.assert.success
+    this.browser.assert.text('title', 'Hi, DrChaz!');
+  });
 
-it('should see welcome page', function() {
-  this.browser.assert.text('title', 'Welcome to Mind Mapp');
-});
+  after(function(done) {
+    this.server.close(done);
+  });
 
 });
