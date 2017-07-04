@@ -7,20 +7,25 @@ var http = require('http');
 describe('User visits app', function() {
 
   before(function() {
-    this.server = http.createServer(app).listen(3000);
-    this.browser = new Browser({ site: 'http://localhost:3000'});
+    this.server = http.createServer(function (req, res) {
+      res.writeHead(200, {'Content-Type': 'text/plain'});
+      res.end('okay');
+    });
+
+    this.server.listen(8000, '127.0.0.1');
+    this.browser = new Browser({ site: 'http://localhost:8000'});
   })
 
 before(function(done) {
-  browser.visit('/namer', done);
+  this.browser.visit('/namer', done);
 });
 
 it('should be successful', function() {
-  browser.assert.success();
+  this.browser.assert.success();
 });
 
 it('should see welcome page', function() {
-  browser.assert.text('title', 'Welcome To Mind Mapp');
+  this.browser.assert.text('title', 'Welcome To Mind Mapp');
 });
 
 });
