@@ -1,3 +1,25 @@
-html {
-  background-color: fuchsia;
+canvas {
+  border: orchid;
+  border-style: dashed;
+  border-width: medium;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  position: absolute;
+}
+
+body {
+  margin: auto;
+}
+
+.toolbar {
+  width: 200px;
+  height: 100vh;
+  background: aquamarine;
+  z-index: 2;
+  position: absolute;
+}
+
+.container {
+  position: relative;
 }
