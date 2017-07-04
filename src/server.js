@@ -6,6 +6,7 @@ const pug = require('pug');
 const http = require('http')
 const port = 8000
 
+app.use(express.static('public'))
 app.set('views', './views')
 app.set('view engine', 'pug')
 
