@@ -25,5 +25,51 @@ class Canvas {
 
     let myState = this;
   }
+
+  selectStart(event) {
+    event.preventDefault();
+    return false;
+  }
+
+  mouseDown(event) {
+    let mouse = myState.getMouse(event);
+    let mx = mouse.x;
+    let my = mouse.y;
+    let shapes = myState.shapes;
+    for (let shape of shapes) {
+      if (shape.contains(mx, my)) {
+        let mySel = shape;
+        myState.dragoffx = mx = mySel.x;
+        myState.dragoffy = my = mySel.y;
+        myState.dragging = true;
+        myState.selection = mySel;
+        myState.valid = false;
+        return;
+      }
+    }
+    if (myState.selection) {
+        myState.selection = null;
+        myState.valid = false;
+    }
+  }
+
+  mouseMove(event) {
+    if (myState.dragging) {
+      let mouse = myState.getMouse(event);
+      myState.selection.x = mouse.x - myState.dragoffx;
+      myState.selection.y = mouse.y - myState.dragoffy;
+      myState.valid = false;
+    }
+  }
+
+  mouseUp() {
+    myState.dragging = false;
+  }
+
+  doubleClick(event) {
+    let mouse = myState.getMouse(event);
+    myState.addIdea(new Idea(mouse.x - 10, mouse.y - 10, 100, 40, colorPicker()));
+  }
+
   
 }
