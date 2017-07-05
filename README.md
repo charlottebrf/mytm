@@ -22,9 +22,11 @@ MMM  M'  "MMMYMM   ""` YMMMb      YMMMb
 
 An interactive mind map! We are using Node.js, Express, Javascript, JQuery, Pug and HTML5 Canvas to make a board that you can add ideas to, then link your ideas to other ideas. Possibly with a snazzy interface.
 
+We're testing with Mocha and Zombie and potentially Chai.
+
 ## How do I get in on this?
 
-Not deployed to web yet- watch this space!
+Not deployed to web yet- watch this space! We may also potentially deploy via Electron.
 
 ## User Stories
 
@@ -67,6 +69,7 @@ I would like to save and load a mind map
 ## Who is Team MYTM?
 
 The following cool cats:
+
 [Charlotte Fereday](https://github.com/charlottebrf)
 
 [Sam Pritchard](https://github.com/sampritchard)
@@ -92,7 +95,7 @@ We are not afraid of new technologies
 ```
 
 ## What are our objectives?
-```
+
 - Enjoy the learning experience
 - Learn Canvas
 - Improve front end testing abilities
@@ -100,7 +103,7 @@ We are not afraid of new technologies
 - Use multiple technologies on a single project
 - Strong team communication with [waffle](https://waffle.io/charlottebrf/mytm) and [slack](https://slack.com/)
 - Use Agile & XP values
-```
+
 
 ## Resources and Tutorials That We Have Deeply Appreciated
 
