@@ -6,11 +6,11 @@ class Idea {
   this.color = color || "#76A9DC";
 
   // Rectangle
-  this.w = 10;
-  this.h = 10;
+  this.w = 200;
+  this.h = 95;
 
   // Cirlce
-  this.radius = 10;
+  this.radius = 70;
   this.startAngle = 0;
   this.endAngle = 2 * Math.PI;
 
@@ -23,20 +23,25 @@ class Idea {
 }
 
 Idea.drawRectangle = function(context, x, y, color, text) {
-  idea = new Idea(x, y, color);
+  idea = new Idea(x, y, color, text);
   context.fillStyle = idea.color;
   context.fillRect(idea.x, idea.y, idea.w, idea.h);
   context.textBaseline = 'middle';
-  context.font = this.font;
-  context.fillStyle = this.fontColor;
-  context.fillText(this.text, x, y);
-
+  context.font = idea.font;
+  context.fillStyle = idea.fontColor;
+  console.log('Amazing colour!')
+  console.log(idea.fontColor);
+  textX = x + idea.w/2 - context.measureText(idea.text).width/2;
+  textY = y + idea.h/2;
+  context.fillText(idea.text, textX, textY);
+  return idea;
 }
 
 Idea.drawCircle = function(context, x, y, color) {
-  idea = new Idea(x, y, color);
-  context.beginPath();
-  context.arc(idea.x, idea.y, idea.radius, idea.startAngle, idea.endAngle);
-  context.fillStyle = idea.color;
-  context.fill();
-}
+    let idea = new Idea(x, y, color);
+    context.beginPath();
+    context.arc(idea.x, idea.y, idea.radius, idea.startAngle, idea.endAngle);
+    context.fillStyle = idea.color;
+    context.fill();
+    return idea;
+};
