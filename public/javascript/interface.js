@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", function() {
   let reset = document.getElementById("reset");
   let text = document.getElementById("text");
 
+  htmlCanvas.addEventListener("selectstart", () => canvas.selectStart(event), false);
+  htmlCanvas.addEventListener("mousedown",  () => canvas.mouseDown(event), true);
+  htmlCanvas.addEventListener("mousemove", () => canvas.mouseMove(event), true);
+  htmlCanvas.addEventListener("mouseup", () => canvas.mouseUp(event), true);
+
   rectangle.onclick = function() {
     canvas.addIdea(Idea.drawRectangle(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker(), text.value));
     text.value = "";

@@ -20,6 +20,20 @@ class Idea {
   this.fontColor = 'black';
 
   }
+  contains(mx, my) {
+    return(this.x <= mx) && (this.x + this.w >= mx) && (this.y <= my) && (this.y + this.h >= my);
+  }
+
+  draw(context) {
+    context.fillStyle = this.color;
+    context.fillRect(this.x, this.y, this.w, this.h);
+    context.textBaseline = 'middle';
+    context.font = this.font;
+    context.fillStyle = this.fontColor;
+    textX = this.x + this.w/2 - context.measureText(this.text).width/2;
+    textY = this.y + this.h/2;
+    context.fillText(this.text, textX, textY);
+  }
 }
 
 Idea.drawRectangle = function(context, x, y, color, text) {
@@ -29,8 +43,6 @@ Idea.drawRectangle = function(context, x, y, color, text) {
   context.textBaseline = 'middle';
   context.font = idea.font;
   context.fillStyle = idea.fontColor;
-  console.log('Amazing colour!')
-  console.log(idea.fontColor);
   textX = x + idea.w/2 - context.measureText(idea.text).width/2;
   textY = y + idea.h/2;
   context.fillText(idea.text, textX, textY);
