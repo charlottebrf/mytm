@@ -26,6 +26,9 @@ class Canvas {
     this.dragoffx = 0;
     this.dragoffy = 0;
     this.interval = 30;
+    this.clicks = 0;
+    this.lastClick = [0, 0];
+
     let myState = this;
     setInterval(function() { myState.draw(); }, this.interval);
    }
@@ -83,6 +86,41 @@ class Canvas {
 
    mouseUp() {
      this.dragging = false;
+   }
+
+   getCursorPosition(event) {
+     let x;
+     let y;
+
+     if (event.pageX !== undefined && event.pageY !== undefined) {
+       x = event.pageX;
+       y = event.pageY;
+     } else {
+       x = event.clientX + document.body.scrolLeft + document.documentElement.scrolLeft;
+       y = event.clientY + document.body.scrolTop + document.documentElement.scrolTop;
+     }
+     return [x, y];
+   }
+
+   doubleClick(event) {
+     let x = this.getCursorPosition(event)[0] - this.canvas.offsetLeft;
+     console.log(x);
+     let y = this.getCursorPosition(event)[1] - this.canvas.offsetTop;
+
+     if (this.clicks !== 1) {
+       console.log('first click');
+       this.clicks ++;
+     } else {
+       console.log('second click');
+       this.context.beginPath();
+       this.context.moveTo(this.lastClick[0], this.lastClick[1]);
+       this.context.lineTo(x, y, 6);
+       this.context.strokeStyle = "black";
+       this.context.stroke();
+       this.clicks = 0;
+     }
+
+     this.lastClick = [x, y];
    }
 
   draw() {

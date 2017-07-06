@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
   htmlCanvas.addEventListener("mousedown",  () => canvas.mouseDown(event), true);
   htmlCanvas.addEventListener("mousemove", () => canvas.mouseMove(event), true);
   htmlCanvas.addEventListener("mouseup", () => canvas.mouseUp(event), true);
+  htmlCanvas.addEventListener("dblclick", () => canvas.doubleClick(event), false);
 
   rectangle.onclick = function() {
     canvas.addIdea(Idea.drawRectangle(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker(), text.value));
