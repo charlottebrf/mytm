@@ -17,13 +17,22 @@
         <h1>mind mapp</h1>
 
         <div class=shapebuttons>
-          <button type="button" id="rectangle" name="button">Rectangle</button><br><br>
-          <button type="button" id="circle" name="button">Circle</button><br><br>
-          <button type="button" id="reset" name="button">Reset</button><br>
+          <button id="rectangle" type="button" name="button">Rectangle</button><br><br>
+          <button id="circle" type="button" name="button">Circle</button><br><br>
+          <button id="reset" type="button" name="button">Reset</button><br>
+        </div>
+
+        <br>
+        <br>
+        <div class=colorbuttons>
+          <button class=colorbuttonhawaiianyellow id=colorbuttonhawaiianyellow onclick="document.getElementById('canvas').classList.toggle('hawaiianyellow');"></button>
+          <button class=colorbuttonsalmon id=colorbuttonsalmon onclick="document.getElementById('canvas').classList.toggle('salmon');"></button>
+          <button class=colorbuttonveryyellow id=colorbuttonveryyellow onclick="document.getElementById('canvas').classList.toggle('veryyellow');"></button>
         </div>
 
       </div>
 
     <button id=toggle class=toggle onclick="document.getElementById('toolbar').classList.toggle('closed'); document.getElementById('toggle').classList.toggle('closed');">< ></button>
+
   </body>
 </html>

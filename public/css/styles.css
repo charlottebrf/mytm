@@ -1,15 +1,72 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
+html {
+  overflow: hidden;
+}
+
 canvas {
-  border: orchid;
   background-color: floralwhite;
-  border-style: dashed;
-  border-width: medium;
   width: 100vw;
   height: 100vh;
   z-index: 1;
   position: absolute;
+  transition: left 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  transition-property: all;
+  transition-duration: 4s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+canvas.hawaiianyellow {
+  background-color: #f6f2d7;
+}
+
+canvas.salmon {
+  background-color: #f89b77;
+}
+
+canvas.veryyellow {
+  background-color: #f8e945;
+}
+
+.colorbuttons {
+  text-align: center;
+}
+
+.colorbuttonhawaiianyellow {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: thin;
+  border-color: #ff5a25;
+  padding: 3px 3px 3px 3px;
+  background-color: #f6f2d7;
+  box-shadow: 0px 0px #ff5a25;
+}
+
+.colorbuttonsalmon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: thin;
+  border-color: #ff5a25;
+  padding: 3px 3px 3px 3px;
+  background-color: #f89b77;
+  box-shadow: 0px 0px #ff5a25;
+}
+
+.colorbuttonveryyellow {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: thin;
+  border-color: #ff5a25;
+  padding: 3px 3px 3px 3px;
+  background-color: #f8e945;
+  box-shadow: 0px 0px #ff5a25;
 }
 
 body {
@@ -84,6 +141,10 @@ button {
   border-style: none;
   transition:transform 0.5s;
   box-shadow: 2px 2px #ff5a25;
+}
+
+button:focus {
+  outline: 0;
 }
 
 button:hover {
