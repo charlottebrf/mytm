@@ -4,16 +4,26 @@
     <link rel="stylesheet" href="/styles.css">
     <script type="text/javascript" src ="../src/server.js"></script>
     <script type="text/javascript" src ="../src/namer.js"></script>
-
     title= title
-
   </head>
+
   <body>
 
     h2= greeting
-    <div class=container>
+
       <canvas id="canvas"></canvas>
-      <canvas class=toolbar></canvas>
-    </div>
+
+      <div class=toolbar id=toolbar>
+        <h1>mind mapp</h1>
+
+        <div class=shapebuttons>
+          <button type="button" name="button">Rectangle</button><br><br>
+          <button type="button" name="button">Circle</button><br>
+        </div>
+
+      </div>
+
+    <button id=toggle class=toggle onclick="document.getElementById('toolbar').classList.toggle('closed'); document.getElementById('toggle').classList.toggle('closed');">< ></button>
+
   </body>
 </html>
