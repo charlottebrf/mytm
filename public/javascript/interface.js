@@ -25,9 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
   let rectangle = document.getElementById("rectangle");
   let circle = document.getElementById("circle");
   let reset = document.getElementById("reset");
+  let text = document.getElementById("text");
 
   rectangle.onclick = function() {
-    canvas.addIdea(Idea.drawRectangle(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker(), "Hello!"));
+    canvas.addIdea(Idea.drawRectangle(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker(), text.value));
+    text.value = "";
   };
 
   circle.onclick = function() {
