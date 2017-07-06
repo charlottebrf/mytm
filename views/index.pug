@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/styles.css">
     <script type="text/javascript" src ="/javascript/idea.js"></script>
     <script type="text/javascript" src ="/javascript/canvas.js"></script>
     <script type="text/javascript" src ="/javascript/interface.js"></script>
   </head>
+
   <body>
-    <canvas id="canvas" width="300" height="300" style="border:1px solid black;"></canvas>
-    <button id="rectangle">Rectangle</button>
-    <button id="circle">Circle</button>
-    <button id="reset">Reset</button>
+
+    h2= greeting
+
+      <canvas id="canvas"></canvas>
+
+      <div class=toolbar id=toolbar>
+        <h1>mind mapp</h1>
+
+        <div class=shapebuttons>
+          <button type="button" name="button">Rectangle</button><br><br>
+          <button type="button" name="button">Circle</button><br>
+        </div>
+
+      </div>
+
+    <button id=toggle class=toggle onclick="document.getElementById('toolbar').classList.toggle('closed'); document.getElementById('toggle').classList.toggle('closed');">< ></button>
   </body>
 </html>
