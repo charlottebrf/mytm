@@ -1,10 +1,25 @@
-$(document).ready(function() {
-  let canvas = document.getElementById('canvas')
-  let jsCanvas = new Canvas(canvas)
-  canvas.addEventListener("selectstart", jsCanvas.selectStart(), false);
-  canvas.addEventListener("mousedown", jsCanvas.mouseDown(), true);
-  canvas.addEventListener("mousemove", jsCanvas.mouseMove(), true);
-  canvas.addEventListener("mouseup", jsCanvas.mouseUp(), true);
-  canvas.addEventListener("dblclick", jsCanvas.doubleClick(), true);
-  $('#reset'.click(c.reset()))
+document.addEventListener("DOMContentLoaded", function() {
+
+  function colorPicker() {
+    colors = ['#6CA370', '#FF5A25', '#F8E945', '#76A9DC', '#4F315F', '#F89B77'];
+    return colors[Math.floor((Math.random() * colors.length), 0)]
+  }
+
+  let htmlCanvas = document.getElementById("canvas");
+  let canvas = new Canvas(htmlCanvas);
+  let rectangle = document.getElementById("rectangle");
+  let circle = document.getElementById("circle");
+  let reset = document.getElementById("reset");
+
+  rectangle.onclick = function() {
+    canvas.addIdea(Idea.drawRectangle(canvas.context, Math.floor((Math.random() * canvas.width), 1), Math.floor((Math.random() * canvas.height), 1), colorPicker()));
+  }
+
+  circle.onclick = function() {
+    canvas.addIdea(new Idea(Math.floor((Math.random() * canvas.width), 1), Math.floor((Math.random() * canvas.height), 1), 100, 40, colorPicker()));
+  }
+
+  reset.onclick = function() {
+    canvas.reset()
+  }
 })

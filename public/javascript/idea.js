@@ -1,20 +1,28 @@
 class Idea {
 
-  constructor(x, y, w, h, fill) {
+  constructor(x, y, color) {
   this.x = x || 10;
   this.y = y || 10;
-  this.w = w || 1;
-  this.h = h || 1;
-  this.fill = fill || "#76A9DC";
-  }
+  this.color = color || "#76A9DC";
 
-  draw(ctx) {
-    ctx.fillStyle = this.fill;
-    ctx.fillRect(this.x, this.y, this.w, this.h);
-  }
+  // Rectangle
+  this.w = 100;
+  this.h = 40;
 
-  contains(mx, my) {
-    return(this.x <= mx) && (this.x + this.w >= mx) && (this.y <= my) && (this.y + this.h >= my);
+  // Cirlce
+  this.radius = 50;
+  this.startAngle = 0;
+  this.endAngle = Math.pi /  2;
   }
-
 }
+
+Idea.drawRectangle = function(context, x, y, color) {
+  idea = new Idea(x, y, color);
+  context.fillStyle = idea.color;
+  context.fillRect(idea.x, idea.y, idea.w, idea.h);
+}
+
+// Idea.drawCircle = function(context, x, y, color) {
+//   idea = new Idea(x, y, color);
+//   context.fillStyle= idea.color;
+// }
