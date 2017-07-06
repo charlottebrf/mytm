@@ -31,6 +31,7 @@ canvas.veryyellow {
 
 .colorbuttons {
   text-align: center;
+  white-space: nowrap;
 }
 
 .colorbuttonhawaiianyellow {
@@ -85,6 +86,7 @@ body {
   transition-property: all;
   transition-duration: .4s;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  white-space: nowrap;
 }
 
 .toolbar.closed {
@@ -120,6 +122,7 @@ h1 {
   color: floralwhite;
   text-shadow: 2px 2px #ff5a25;
   transition:transform 0.5s;
+  white-space: nowrap;
 }
 
 h1:hover {
@@ -128,6 +131,7 @@ h1:hover {
 
 .shapebuttons {
   text-align: center;
+  white-space: nowrap;
 }
 
 button {
