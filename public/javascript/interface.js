@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
   function colorPicker() {
-    let colors = ['#6CA370', '#FF5A25', '#F8E945', '#76A9DC', '#4F315F', '#F89B77'];
+    let colors = ['#6CA370', '#FF5A25', '#76A9DC', '#4F315F', '#F89B77'];
     return colors[Math.floor((Math.random() * colors.length), 0)]
   }
 

@@ -16,8 +16,8 @@ class Idea {
 
   //text box
   this.text = text;
-  this.font = '12px Arial';
-  this.fontColor = 'black';
+  this.font = 'bold 24px Courier';
+  this.fontColor = 'white';
 
   }
   contains(mx, my) {

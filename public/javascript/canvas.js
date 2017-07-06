@@ -108,10 +108,10 @@ class Canvas {
      let y = this.getCursorPosition(event)[1] - this.canvas.offsetTop;
 
      if (this.clicks !== 1) {
-       console.log('first click');
+       this.canvas.style.cursor = 'crosshair';
        this.clicks ++;
      } else {
-       console.log('second click');
+       this.canvas.style.cursor = 'default';
        this.context.beginPath();
        this.context.moveTo(this.lastClick[0], this.lastClick[1]);
        this.context.lineTo(x, y, 6);
