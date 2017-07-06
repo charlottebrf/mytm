@@ -5,6 +5,9 @@ class Canvas {
     this.width = htmlCanvas.width;
     this.height = htmlCanvas.height;
     this.context = htmlCanvas.getContext("2d");
+    console.log(this.width);
+    console.log(this.height);
+
     let stylePaddingLeft, stylePaddingTop, styleBorderLeft, styleBorderTop;
     if (document.defaultView && document.defaultView.getComputedStyle) {
       this.stylePaddingLeft = parseInt(document.defaultView.getComputedStyle(htmlCanvas, null)['paddingLeft'], 10) || 0;

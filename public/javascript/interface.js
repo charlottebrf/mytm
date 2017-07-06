@@ -5,21 +5,35 @@ document.addEventListener("DOMContentLoaded", function() {
     return colors[Math.floor((Math.random() * colors.length), 0)]
   }
 
+  function randomX(width) {
+    let min = Math.ceil(0);
+    let max = Math.floor(width);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function randomY(height) {
+    let min = Math.ceil(0);
+    let max = Math.floor(height);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
   let htmlCanvas = document.getElementById("canvas");
+  htmlCanvas.setAttribute('width', document.documentElement.clientWidth.toString());
+  htmlCanvas.setAttribute('height', document.documentElement.clientHeight.toString());
   let canvas = new Canvas(htmlCanvas);
   let rectangle = document.getElementById("rectangle");
   let circle = document.getElementById("circle");
   let reset = document.getElementById("reset");
 
   rectangle.onclick = function() {
-    canvas.addIdea(Idea.drawRectangle(canvas.context, Math.floor((Math.random() * canvas.width), 1), Math.floor((Math.random() * canvas.height), 1), colorPicker()));
+    canvas.addIdea(Idea.drawRectangle(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker()));
   };
 
   circle.onclick = function() {
-    canvas.addIdea(Idea.drawCircle(canvas.context, Math.floor((Math.random() * canvas.width), 1), Math.floor((Math.random() * canvas.height), 1), colorPicker()));
+    canvas.addIdea(Idea.drawCircle(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker()));
   };
 
   reset.onclick = function() {
-    canvas.reset()
+    canvas.reset();
   };
 });
