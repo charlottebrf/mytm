@@ -6,11 +6,11 @@ class Idea {
   this.color = color || "#76A9DC";
 
   // Rectangle
-  this.w = 100;
-  this.h = 40;
+  this.w = 10;
+  this.h = 10;
 
   // Cirlce
-  this.radius = 30;
+  this.radius = 10;
   this.startAngle = 0;
   this.endAngle = 2 * Math.PI
   }
