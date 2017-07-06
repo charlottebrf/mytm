@@ -1,18 +1,13 @@
 const express = require('express');
-const namer = require('./namer');
 const app = express();
 const path = require('path');
 const pug = require('pug');
-const http = require('http')
-const port = 8000
+const http = require('http');
+const port = 8000;
 
-app.set('views', './views')
-app.set('view engine', 'pug')
-
-app.get('/:name', (req, res) => {
-  var name = req.params.name;
-  res.render('index', { title: `Hi, ${name}!`, greeting: `Hi, ${name}!`})
-});
+app.set('views', './views');
+app.set('view engine', 'pug');
+app.use(express.static('./public'));
 
 app.get('/', function(req, res){
   res.render('index')
