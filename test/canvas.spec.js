@@ -1,7 +1,10 @@
 const http = require('http');
 process.env.NODE_ENV = 'test';
 const app = require('../src/server');
+const idea = require('../src/idea');
 const Browser = require('zombie');
+const chai = require('chai');
+const expect = chai.expect;
 
 describe('User sees blank canvas', function() {
 
@@ -18,6 +21,12 @@ describe('User sees blank canvas', function() {
     this.browser.assert.element('#canvas');
   });
 
+  it('should show an addded object', function() {
+    canvasObject = new Idea(document.getElementById('canvas').getContext('2d'));
+    // canvasObject.context.fillStyle = "cornflowerblue"
+    this.browser.assert.element('#canvas1')
+    // canvasObject.context.clear();
+  });
 
   after(function(done) {
     this.server.close(done);
