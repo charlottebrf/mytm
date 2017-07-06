@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   circle.onclick = function() {
-    canvas.addIdea(new Idea(Math.floor((Math.random() * canvas.width), 1), Math.floor((Math.random() * canvas.height), 1), 100, 40, colorPicker()));
+    canvas.addIdea(Idea.drawCircle(canvas.context, Math.floor((Math.random() * canvas.width), 1), Math.floor((Math.random() * canvas.height), 1), colorPicker()));
   }
 
   reset.onclick = function() {
