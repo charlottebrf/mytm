@@ -134,9 +134,9 @@ class Canvas {
        this.context.stroke();
        this.clicks = 0;
        this.lines.push(new Line(this.lastClick[0], this.lastClick[1], x, y));
-       this.renderAll();
        this.drawing = false;
        this.drawingStartCoords = [];
+       this.renderAll();
      }
 
      this.lastClick = [x, y];
@@ -144,9 +144,13 @@ class Canvas {
 
   renderAll() {
       this.clear();
-      for(let idea of this.ideas) {
-          if (idea.x > this.width || idea.y > this.height || idea.x + idea.y < 0 || idea.y + idea.h < 0) continue;
-          idea.draw(this.context);
+      if (this.ideas.length > 0) {
+          for (let idea of this.ideas) {
+              if (idea.x > this.width || idea.y > this.height || idea.x + idea.y < 0 || idea.y + idea.h < 0) continue;
+              idea.draw(this.context);
+              this.renderLines();
+          }
+      } else {
           this.renderLines();
       }
   }

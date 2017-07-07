@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14976a10-6f2a-4ca5-a965-8225c03f143c" name="Default" comment="">
+    <list default="true" id="14976a10-6f2a-4ca5-a965-8225c03f143c" name="Default" comment="• refactor line preview">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascript/canvas.js" afterPath="$PROJECT_DIR$/public/javascript/canvas.js" />
     </list>
@@ -57,8 +57,8 @@
       <file leaf-file-name="canvas.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascript/canvas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="136" column="24" lean-forward="false" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
+            <state relative-caret-position="209">
+              <caret line="110" column="22" lean-forward="false" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -394,7 +394,7 @@
       <workItem from="1499273608248" duration="6126000" />
       <workItem from="1499345697690" duration="4950000" />
       <workItem from="1499351032464" duration="4162000" />
-      <workItem from="1499461569311" duration="7781000" />
+      <workItem from="1499461569311" duration="8169000" />
     </task>
     <task id="LOCAL-00001" summary="• minor refactor - changed paths to directories inside controller&#10;• all working now :)">
       <created>1499249111679</created>
@@ -452,11 +452,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499467243526</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="• add rudimentary preview to line creation">
+      <created>1499469408820</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1499469408820</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37228000" />
+    <option name="totallyTimeSpent" value="37616000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -523,7 +530,9 @@
     <MESSAGE value="• refactor toolbar style to transition more smoothly" />
     <MESSAGE value="• lines now stay visible when other shapes are being moved" />
     <MESSAGE value="• all lines on canvas can now be cleared without clearing the ideas" />
-    <option name="LAST_COMMIT_MESSAGE" value="• all lines on canvas can now be cleared without clearing the ideas" />
+    <MESSAGE value="• add rudimentary preview to line creation" />
+    <MESSAGE value="• refactor line preview" />
+    <option name="LAST_COMMIT_MESSAGE" value="• refactor line preview" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -739,8 +748,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascript/canvas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="136" column="24" lean-forward="false" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
+        <state relative-caret-position="209">
+          <caret line="110" column="22" lean-forward="false" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
           <folding />
         </state>
       </provider>
