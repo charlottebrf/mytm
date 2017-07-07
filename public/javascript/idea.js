@@ -1,6 +1,7 @@
 class Idea {
 
-  constructor(x, y, color) {
+  constructor(x, y, color, shape) {
+  this.shape = shape;
   this.x = x || 10;
   this.y = y || 10;
   this.color = color || "#76A9DC";
@@ -16,18 +17,32 @@ class Idea {
   }
 }
 
-Idea.drawRectangle = function(context, x, y, color) {
-    let idea = new Idea(x, y, color);
-    context.fillStyle = idea.color;
-    context.fillRect(idea.x, idea.y, idea.w, idea.h);
+Idea.createAndDraw = function(context, x, y, color, shape) {
+    let idea = new Idea(x, y, color, shape);
+    if (idea.shape === 'rectangle') {
+      context.fillStyle = idea.color;
+      context.fillRect(idea.x, idea.y, idea.w, idea.h);
+    } else {
+      context.beginPath();
+      context.arc(idea.x, idea.y, idea.radius, idea.startAngle, idea.endAngle);
+      context.fillStyle = idea.color;
+      context.fill();
+    }
     return idea;
-};
+ };
 
-Idea.drawCircle = function(context, x, y, color) {
-    let idea = new Idea(x, y, color);
-    context.beginPath();
-    context.arc(idea.x, idea.y, idea.radius, idea.startAngle, idea.endAngle);
-    context.fillStyle = idea.color;
-    context.fill();
-    return idea;
-};
+// Idea.drawRectangle = function(context, x, y, color) {
+//     let idea = new Idea(x, y, color);
+//     context.fillStyle = idea.color;
+//     context.fillRect(idea.x, idea.y, idea.w, idea.h);
+//     return idea;
+// };
+//
+// Idea.drawCircle = function(context, x, y, color) {
+//     let idea = new Idea(x, y, color);
+//     context.beginPath();
+//     context.arc(idea.x, idea.y, idea.radius, idea.startAngle, idea.endAngle);
+//     context.fillStyle = idea.color;
+//     context.fill();
+//     return idea;
+// };

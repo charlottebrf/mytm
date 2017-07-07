@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", function() {
   let reset = document.getElementById("reset");
 
   rectangle.onclick = function() {
-    canvas.addIdea(Idea.drawRectangle(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker()));
+    canvas.addIdea(Idea.createAndDraw(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker(), 'rectangle'));
   };
 
   circle.onclick = function() {
-    canvas.addIdea(Idea.drawCircle(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker()));
+    canvas.addIdea(Idea.createAndDraw(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker(), 'cirlce'));
   };
 
   reset.onclick = function() {
