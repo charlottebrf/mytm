@@ -21,6 +21,7 @@ class Canvas {
     this.ideas = [];
     this.lines = [];
     this.dragging = false;
+    this.drawing = false;
     this.selection = null;
     this.selectionColor = "transparent";
     this.selectionWidth = 2;
@@ -29,6 +30,7 @@ class Canvas {
     this.interval = 30;
     this.clicks = 0;
     this.lastClick = [0, 0];
+    this.drawingStartCoords = [];
 
     let myState = this;
     setInterval(function() { myState.draw(); }, this.interval);
@@ -82,6 +84,8 @@ class Canvas {
        this.selection.x = mouse.x - this.dragoffx;
        this.selection.y = mouse.y - this.dragoffy;
        this.valid = false;
+     } else if (this.drawing) {
+       this.previewLine(event, this.drawingStartCoords[0], this.drawingStartCoords[1]);
      }
    }
 
@@ -103,6 +107,15 @@ class Canvas {
      return [x, y];
    }
 
+    previewLine(event, startX, startY) {
+      this.renderAll();
+      this.context.beginPath();
+      this.context.moveTo(startX, startY);
+      this.context.strokeStyle = "black";
+      this.context.lineTo(this.getCursorPosition(event)[0] - this.canvas.offsetLeft, this.getCursorPosition(event)[1] - this.canvas.offsetTop);
+      this.context.stroke();
+    }
+
    doubleClick(event) {
      let x = this.getCursorPosition(event)[0] - this.canvas.offsetLeft;
      let y = this.getCursorPosition(event)[1] - this.canvas.offsetTop;
@@ -110,6 +123,8 @@ class Canvas {
      if (this.clicks !== 1) {
        this.canvas.style.cursor = 'crosshair';
        this.clicks ++;
+       this.drawingStartCoords = [x, y];
+       this.drawing = true;
      } else {
        this.canvas.style.cursor = 'default';
        this.context.beginPath();
@@ -119,12 +134,16 @@ class Canvas {
        this.context.stroke();
        this.clicks = 0;
        this.lines.push(new Line(this.lastClick[0], this.lastClick[1], x, y));
+       this.renderAll();
+       this.drawing = false;
+       this.drawingStartCoords = [];
      }
 
      this.lastClick = [x, y];
    }
 
   renderAll() {
+      this.clear();
       for(let idea of this.ideas) {
           if (idea.x > this.width || idea.y > this.height || idea.x + idea.y < 0 || idea.y + idea.h < 0) continue;
           idea.draw(this.context);
