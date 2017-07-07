@@ -23,6 +23,7 @@
     "pug": "^2.0.0-rc.2"
   },
   "devDependencies": {
+    "supertest": "^3.0.0",
     "zombie": "^5.0.7"
   }
 }
