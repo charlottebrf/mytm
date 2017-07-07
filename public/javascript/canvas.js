@@ -124,24 +124,30 @@ class Canvas {
      this.lastClick = [x, y];
    }
 
-  drawLines(context, lines) {
-      for(let line of lines) {
-          line.draw(context);
+  renderAll() {
+      for(let idea of this.ideas) {
+          if (idea.x > this.width || idea.y > this.height || idea.x + idea.y < 0 || idea.y + idea.h < 0) continue;
+          idea.draw(this.context);
+          this.renderLines();
       }
+  }
+
+  renderLines() {
+      for(let line of this.lines) {
+          line.draw(this.context);
+      }
+  }
+
+  clearLines() {
+    this.clear();
+    this.lines = [];
+    this.renderAll()
   }
 
   draw() {
     if (!this.valid) {
-      let context = this.context;
-      let ideas = this.ideas;
-      let lines = this.lines;
       this.clear();
-
-      for(let idea of ideas) {
-        if (idea.x > this.width || idea.y > this.height || idea.x + idea.y < 0 || idea.y + idea.h < 0) continue;
-        idea.draw(context);
-        this.drawLines(context, lines);
-      }
+      this.renderAll();
 
       if (this.selection !== null) {
         context.strokeStyle = this.selectionColor;
