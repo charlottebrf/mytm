@@ -34,12 +34,13 @@ document.addEventListener("DOMContentLoaded", function() {
   htmlCanvas.addEventListener("dblclick", () => canvas.doubleClick(event), false);
 
   rectangle.onclick = function() {
-    canvas.addIdea(Idea.drawRectangle(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker(), text.value));
-    text.value = "";
+    canvas.addIdea(Idea.create(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker(), 'rectangle', text.value));
+    text.value = ''
   };
 
   circle.onclick = function() {
-    canvas.addIdea(Idea.drawCircle(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker()));
+    canvas.addIdea(Idea.create(canvas.context, randomX(canvas.width), randomY(canvas.height), colorPicker(), 'circle', text.value));
+    text.value = ''
   };
 
   reset.onclick = function() {

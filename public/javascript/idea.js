@@ -1,59 +1,83 @@
 class Idea {
 
-  constructor(x, y, color, text) {
-  this.x = x || 10;
-  this.y = y || 10;
-  this.color = color || "#76A9DC";
+  constructor(x, y, color, shape, text) {
+    this.shape = shape;
+    this.x = x || 10;
+    this.y = y || 10;
+    this.color = color || "#76A9DC";
+    this.shape = shape;
 
-  // Rectangle
-  this.w = 200;
-  this.h = 95;
+    // Specifications for rectangles
+    this.w = 200;
+    this.h = 95;
 
-  // Cirlce
-  this.radius = 70;
-  this.startAngle = 0;
-  this.endAngle = 2 * Math.PI;
+    // Specifications for circles
+    this.radius = 70;
+    this.startAngle = 0;
+    this.endAngle = 2 * Math.PI;
 
-  //text box
-  this.text = text;
-  this.font = 'bold 24px Courier';
-  this.fontColor = 'white';
-
+    // Specifications for text
+    this.text = text;
+    this.font = 'bold 24px Courier';
+    this.fontColor = 'white';
   }
+
   contains(mx, my) {
-    return(this.x <= mx) && (this.x + this.w >= mx) && (this.y <= my) && (this.y + this.h >= my);
+    if (this.shape === 'rectangle') {
+      return(this.x <= mx) && (this.x + this.w >= mx) && (this.y <= my) && (this.y + this.h >= my);
+    } else {
+      let distancesquared = (this.x - mx) * (this.x - mx) + (this.y - my) * (this.y - my);
+      return distancesquared <= this.radius * this.radius;
+    }
   }
 
   draw(context) {
-    context.fillStyle = this.color;
-    context.fillRect(this.x, this.y, this.w, this.h);
-    context.textBaseline = 'middle';
-    context.font = this.font;
-    context.fillStyle = this.fontColor;
-    textX = this.x + this.w/2 - context.measureText(this.text).width/2;
-    textY = this.y + this.h/2;
-    context.fillText(this.text, textX, textY);
+    if (this.shape === 'rectangle') {
+      context.fillStyle = this.color;
+      context.fillRect(this.x, this.y, this.w, this.h);
+      context.textBaseline = 'middle';
+      context.textAlign = 'center';
+      context.font = this.font;
+      context.fillStyle = this.fontColor;
+      textX = this.x + (this.w / 2);
+      textY = this.y + (this.h / 2);
+      context.fillText(this.text, textX, textY);
+    } else {
+      context.beginPath();
+      context.arc(this.x, this.y, this.radius, this.startAngle, this.endAngle);
+      context.fillStyle = this.color;
+      context.fill();
+      context.textBaseline = 'middle';
+      context.textAlign = 'center';
+      context.font = this.font;
+      context.fillStyle = this.fontColor;
+      context.fillText(this.text, this.x, this.y);
+    }
   }
-}
-
-Idea.drawRectangle = function(context, x, y, color, text) {
-  idea = new Idea(x, y, color, text);
-  context.fillStyle = idea.color;
-  context.fillRect(idea.x, idea.y, idea.w, idea.h);
-  context.textBaseline = 'middle';
-  context.font = idea.font;
-  context.fillStyle = idea.fontColor;
-  textX = x + idea.w/2 - context.measureText(idea.text).width/2;
-  textY = y + idea.h/2;
-  context.fillText(idea.text, textX, textY);
-  return idea;
-}
-
-Idea.drawCircle = function(context, x, y, color) {
-    let idea = new Idea(x, y, color);
-    context.beginPath();
-    context.arc(idea.x, idea.y, idea.radius, idea.startAngle, idea.endAngle);
-    context.fillStyle = idea.color;
-    context.fill();
-    return idea;
 };
+
+Idea.create = function(context, x, y, color, shape, text) {
+    let idea = new Idea(x, y, color, shape, text);
+    if (idea.shape === 'rectangle') {
+      context.fillStyle = idea.color;
+      context.fillRect(idea.x, idea.y, idea.w, idea.h);
+      context.textBaseline = 'middle';
+      context.textAlign = 'center';
+      context.font = idea.font;
+      context.fillStyle = idea.fontColor;
+      textX = idea.x + (idea.w / 2);
+      textY = idea.y + (idea.h / 2);
+      context.fillText(idea.text, textX, textY);
+    } else {
+      context.beginPath();
+      context.arc(idea.x, idea.y, idea.radius, idea.startAngle, idea.endAngle);
+      context.fillStyle = idea.color;
+      context.fill();
+      context.textBaseline = 'middle';
+      context.textAlign = 'center';
+      context.font = idea.font;
+      context.fillStyle = idea.fontColor;
+      context.fillText(idea.text, idea.x, idea.y);
+    }
+    return idea;
+ };

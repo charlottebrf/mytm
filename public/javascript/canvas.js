@@ -21,7 +21,7 @@ class Canvas {
     this.ideas = [];
     this.dragging = false;
     this.selection = null;
-    this.selectionColor = "#FF5A25";
+    this.selectionColor = "transparent";
     this.selectionWidth = 2;
     this.dragoffx = 0;
     this.dragoffy = 0;
