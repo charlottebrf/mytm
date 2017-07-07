@@ -2,9 +2,9 @@ class Idea {
 
   constructor(x, y, color, shape, text) {
     this.shape = shape;
-    this.x = x || 10;
-    this.y = y || 10;
-    this.color = color || "#76A9DC";
+    this.x = x;
+    this.y = y;
+    this.color = color;
     this.shape = shape;
 
     // Specifications for rectangles
@@ -54,7 +54,7 @@ class Idea {
       context.fillText(this.text, this.x, this.y);
     }
   }
-};
+}
 
 Idea.create = function(context, x, y, color, shape, text) {
     let idea = new Idea(x, y, color, shape, text);

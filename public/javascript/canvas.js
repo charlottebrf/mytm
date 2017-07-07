@@ -19,6 +19,7 @@ class Canvas {
     this.htmlLeft = html.offsetLeft;
     this.valid = false;
     this.ideas = [];
+    this.lines = [];
     this.dragging = false;
     this.selection = null;
     this.selectionColor = "transparent";
@@ -104,7 +105,6 @@ class Canvas {
 
    doubleClick(event) {
      let x = this.getCursorPosition(event)[0] - this.canvas.offsetLeft;
-     console.log(x);
      let y = this.getCursorPosition(event)[1] - this.canvas.offsetTop;
 
      if (this.clicks !== 1) {
@@ -114,24 +114,33 @@ class Canvas {
        this.canvas.style.cursor = 'default';
        this.context.beginPath();
        this.context.moveTo(this.lastClick[0], this.lastClick[1]);
-       this.context.lineTo(x, y, 6);
+       this.context.lineTo(x, y);
        this.context.strokeStyle = "black";
        this.context.stroke();
        this.clicks = 0;
+       this.lines.push(new Line(this.lastClick[0], this.lastClick[1], x, y));
      }
 
      this.lastClick = [x, y];
    }
 
+  drawLines(context, lines) {
+      for(let line of lines) {
+          line.draw(context);
+      }
+  }
+
   draw() {
     if (!this.valid) {
       let context = this.context;
       let ideas = this.ideas;
+      let lines = this.lines;
       this.clear();
 
       for(let idea of ideas) {
         if (idea.x > this.width || idea.y > this.height || idea.x + idea.y < 0 || idea.y + idea.h < 0) continue;
         idea.draw(context);
+        this.drawLines(context, lines);
       }
 
       if (this.selection !== null) {
