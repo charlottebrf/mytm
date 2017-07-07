@@ -18,7 +18,7 @@ app.get('/', function(req, res){
 
 const server = app.listen(8000, function() {
   const port = server.address().port;
-  console.log("Wonderful server is listening at " + port);
+  console.log("Wonderful server is listening at" + port);
 });
 
 module.exports = server;
