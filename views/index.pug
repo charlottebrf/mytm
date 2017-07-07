@@ -35,11 +35,7 @@
 
       </div>
 
-    <button id=toggle class=toggle onclick="document.getElementById('toolbar').classList.toggle('closed'); document.getElementById('toggle').classList.toggle('closed');">< ></button>
-
-    <a class=instructions id="button" href="#popup">?</a>
-      <div id="popup" style="text-align:center;">
-      <a id="close" href="#">X</a>
+      <div id=popup class=popup style="text-align:center;">
       <h4>How to use<br>mind mapp</h4>
       <ul>
         <li>Create an idea by typing a word into the text box and then clicking a shape.</li>
@@ -48,5 +44,10 @@
         <li>The reset button will clear your canvas.</li>
       </ul>
       </div>
+
+    <button id=toggle class=toggle onclick="document.getElementById('toolbar').classList.toggle('closed'); document.getElementById('toggle').classList.toggle('closed');">< ></button>
+
+    <button class=instructions name="instructions" onclick="document.getElementById('popup').classList.toggle('open');">?</button>
+
   </body>
 </html>
