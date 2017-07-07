@@ -9,7 +9,7 @@ describe('loading express', function() {
     server.close(done);
   });
 
-  it('respondes to /', function testSlash(done) {
+  it('responds to /', function testSlash(done) {
     request(server)
     .get('/')
     .expect(200, done);
