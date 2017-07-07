@@ -5,8 +5,6 @@ class Canvas {
     this.width = htmlCanvas.width;
     this.height = htmlCanvas.height;
     this.context = htmlCanvas.getContext("2d");
-    console.log(this.width);
-    console.log(this.height);
 
     let stylePaddingLeft, stylePaddingTop, styleBorderLeft, styleBorderTop;
     if (document.defaultView && document.defaultView.getComputedStyle) {
@@ -25,10 +23,126 @@ class Canvas {
     this.selection = null;
     this.selectionColor = "#FF5A25";
     this.selectionWidth = 2;
-    this.interval = 30;
     this.dragoffx = 0;
     this.dragoffy = 0;
+    this.interval = 30;
+    this.clicks = 0;
+    this.lastClick = [0, 0];
+
+    let myState = this;
+    setInterval(function() { myState.draw(); }, this.interval);
+   }
+
+   getMouse(event) {
+     let element = this.canvas, offsetX = 0, offsetY = 0, mx, my;
+     if (element.offsetParent !== undefined) {
+       do {
+         offsetX += element.offsetLeft;
+         offsetY += element.offsetTop;
+       } while ((element = element.offsetParent));
+     }
+     offsetX += this.styleBorderLeft + this.styleBorderLeft + this.htmlLeft;
+     offsetY += this.stylePaddingTop + this.styleBorderTop + this.htmlTop;
+     mx = event.pageX - offsetX;
+     my = event.pageY - offsetY;
+     return {x: mx, y: my};
+   }
+
+   selectStart(event) {
+     event.preventDefault();
+     return false;
+   }
+
+   mouseDown(event) {
+     let mouse = this.getMouse(event);
+     let mx = mouse.x;
+     let my = mouse.y;
+     let ideas = this.ideas;
+     for (let idea of ideas) {
+       if (idea.contains(mx, my)) {
+         let mySel = idea;
+         this.dragoffx = mx - mySel.x;
+         this.dragoffy = my - mySel.y;
+         this.dragging = true;
+         this.selection = mySel;
+         this.valid = false;
+         return;
+       }
+     }
+     if (this.selection) {
+       this.selection = null;
+       this.valid = false;
+     }
+   }
+
+   mouseMove(event) {
+     if (this.dragging) {
+       let mouse = this.getMouse(event);
+       this.selection.x = mouse.x - this.dragoffx;
+       this.selection.y = mouse.y - this.dragoffy;
+       this.valid = false;
+     }
+   }
+
+   mouseUp() {
+     this.dragging = false;
+   }
+
+   getCursorPosition(event) {
+     let x;
+     let y;
+
+     if (event.pageX !== undefined && event.pageY !== undefined) {
+       x = event.pageX;
+       y = event.pageY;
+     } else {
+       x = event.clientX + document.body.scrolLeft + document.documentElement.scrolLeft;
+       y = event.clientY + document.body.scrolTop + document.documentElement.scrolTop;
+     }
+     return [x, y];
+   }
+
+   doubleClick(event) {
+     let x = this.getCursorPosition(event)[0] - this.canvas.offsetLeft;
+     console.log(x);
+     let y = this.getCursorPosition(event)[1] - this.canvas.offsetTop;
+
+     if (this.clicks !== 1) {
+       this.canvas.style.cursor = 'crosshair';
+       this.clicks ++;
+     } else {
+       this.canvas.style.cursor = 'default';
+       this.context.beginPath();
+       this.context.moveTo(this.lastClick[0], this.lastClick[1]);
+       this.context.lineTo(x, y, 6);
+       this.context.strokeStyle = "black";
+       this.context.stroke();
+       this.clicks = 0;
+     }
+
+     this.lastClick = [x, y];
+   }
+
+  draw() {
+    if (!this.valid) {
+      let context = this.context;
+      let ideas = this.ideas;
+      this.clear();
+
+      for(let idea of ideas) {
+        if (idea.x > this.width || idea.y > this.height || idea.x + idea.y < 0 || idea.y + idea.h < 0) continue;
+        idea.draw(context);
+      }
+
+      if (this.selection !== null) {
+        context.strokeStyle = this.selectionColor;
+        context.lineWidth = this.selectionWidth;
+        let mySel = this.selection;
+        context.strokeRect(mySel.x, mySel.y, mySel.w, mySel.h);
+      }
+    this.valid = true;
   }
+}
 
   addIdea(idea) {
     this.ideas.push(idea);
