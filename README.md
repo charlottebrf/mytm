@@ -36,7 +36,7 @@ Then visit localhost:8000 in your web browser. Happy mapping!
 
 ## How do I use it?
 
-![mapp](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/mindmapp.png)
+![mapp](https://github.com/charlottebrf/mytm/blob/master/images/mindmapp.png)
 
 The green bar on the left has a selection of tools to help you map out your ideas- you can type a word in the text box, then click the shape that you would like to create. The idea will then appear on the canvas to the right, and can be clicked and dragged around with the mouse. You can then add lines between ideas by double clicking a start point and an end point.
 
