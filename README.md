@@ -30,6 +30,8 @@ Not deployed to web yet- watch this space! We may also potentially deploy via El
 
 ## How do I use it?
 
+![mapp](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/mindmapp.png)
+
 The green bar on the left has a selection of tools to help you map out your ideas- you can type a word in the text box, then click the shape that you would like to create. The idea will then appear on the canvas to the right, and can be clicked and dragged around with the mouse. You can then add lines between ideas by double clicking a start point and an end point.
 
 You can clear lines but leave ideas on the canvas by clicking the 'Clear Lines' button on the toolbar, or both lines and ideas by clicking 'Clear Canvas'. Different canvas colours can be toggled with the row of circular coloured buttons, and the toolbar can be shown or hidden with the toggle in the lower left.
@@ -50,16 +52,11 @@ Initial diagramming:
 ![Diagramming](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/diagramming2.jpg)
 
 
-![Diagramming](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/diagramming3.jpg)
-
-
 We encountered a lot of entertaining glitches with our shapes- especially when trying to get them to display text:
 
 
 ![Glitches](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/glitches1.png)
 
-
-![Glitches](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/glitches2.png)
 
 ## User Stories
 
