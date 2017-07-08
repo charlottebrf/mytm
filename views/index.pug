@@ -32,11 +32,24 @@
           <button class=colorbuttonveryyellow id=colorbuttonveryyellow onclick="document.getElementById('canvas').classList.toggle('veryyellow');"></button>
         </div>
 
-        <textarea id="text"></textarea>
+        <br>
+        <input type="text" id="text">
 
       </div>
 
+      <div id=popup class=popup style="text-align:center;">
+      <h4>How to use<br>mind mapp</h4>
+      <ul>
+        <li>Create an idea by typing a word into the text box and then clicking a shape.</li>
+        <li>Click and drag your ideas to move them around.</li>
+        <li>Draw a line by double clicking a start point, then double clicking its end point.</li>
+        <li>The reset button will clear your canvas.</li>
+      </ul>
+      </div>
+
     <button id=toggle class=toggle onclick="document.getElementById('toolbar').classList.toggle('closed'); document.getElementById('toggle').classList.toggle('closed');">< ></button>
+
+    <button class=instructions name="instructions" onclick="document.getElementById('popup').classList.toggle('open');">?</button>
 
   </body>
 </html>

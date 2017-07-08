@@ -5,6 +5,17 @@ html {
   overflow: hidden;
 }
 
+h2 {
+  width: 0;
+  height: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 canvas {
   background-color: floralwhite;
   width: 100vw;
@@ -129,6 +140,16 @@ h1:hover {
     transform: scale(1.1);
 }
 
+h4 {
+  font-family: Pacifico;
+  font-size: 40px;
+  text-align: center;
+  color: #6CA370;
+  line-height: 45px;
+  transition:transform 0.5s;
+  white-space: nowrap;
+}
+
 .shapebuttons {
   text-align: center;
   white-space: nowrap;
@@ -157,4 +178,54 @@ button:hover {
 
 button:active {
   background-color: #F8E945;
+}
+
+input {
+  background-color: floralwhite;
+  margin-left: 43px;
+  border-radius: 5%;
+  border-style: none;
+  height: 30px;
+  width: 130px;
+  font-family: 'Josefin Sans';
+  font-size: 20px;
+}
+
+.instructions {
+  z-index: 3;
+  margin-top: 95vh;
+  margin-left: 40px;
+  position: absolute;
+  background-color: #6CA370;
+  box-shadow: 0px 0px #ff5a25;
+  font-family: 'Josefin Sans';
+  padding: 3px 3px 3px 3px;
+  color: #91c994;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  top: 25vh;
+  left: 25vw;
+  width: 50vw;
+  background-color: #f6f2d7;
+  color: black;
+  border-style: dashed;
+  border-radius: 15px;
+  border-color: #f89b77;
+  z-index: 3;
+  margin-left: 80px;
+}
+
+.popup.open {
+  display: block;
+}
+
+ul {
+  text-align: left;
+  font-family: 'Josefin Sans';
+  font-size: 20px;
+  list-style-type: none;
+  line-height: 30px;
 }
