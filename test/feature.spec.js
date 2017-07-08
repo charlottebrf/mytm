@@ -1,7 +1,7 @@
 const app = require('../src/server');
 Browser = require('zombie');
 let assert = require('chai').assert;
-describe("zombie suite", function() {
+describe('Feature tests', function() {
 
   before(function() {
     this.server = app.listen(8000);
@@ -64,6 +64,20 @@ describe("zombie suite", function() {
   it('has a circle button that can be clicked on', function(done) {
     var browser = this.browser;
     browser.pressButton('Circle').then(function() {
+    assert.ok(browser.success);
+    }).then(done, done);
+  });
+
+  it('has a reset button that can be clicked on', function(done) {
+    var browser = this.browser;
+    browser.pressButton('Reset').then(function() {
+    assert.ok(browser.success);
+    }).then(done, done);
+  });
+
+  it('has a clear lines button that can be clicked on', function(done) {
+    var browser = this.browser;
+    browser.pressButton('Clear Lines').then(function() {
     assert.ok(browser.success);
     }).then(done, done);
   });
