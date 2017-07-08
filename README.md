@@ -28,6 +28,14 @@ We're testing with Mocha and Zombie and potentially Chai.
 
 Not deployed to web yet- watch this space! We may also potentially deploy via Electron.
 
+## How do I use it?
+
+The green bar on the left has a selection of tools to help you map out your ideas- you can type a word in the text box, then click the shape that you would like to create. The idea will then appear on the canvas to the right, and can be clicked and dragged around with the mouse. You can then add lines between ideas by double clicking a start point and an end point.
+
+You can clear lines but leave ideas on the canvas by clicking the 'Clear Lines' button on the toolbar, or both lines and ideas by clicking 'Clear Canvas'. Different canvas colours can be toggled with the row of circular coloured buttons, and the toolbar can be shown or hidden with the toggle in the lower left.
+
+An instruction sheet can be toggled with the '?' button.
+
 ## User Stories
 
 ```
@@ -72,13 +80,13 @@ The following cool cats:
 
 [Charlotte Fereday](https://github.com/charlottebrf)
 
-[Sam Pritchard](https://github.com/sampritchard)
-
-[Andrew Clarke](https://github.com/Dino892)
-
 [Michael Jacobson](https://github.com/michaelbjacobson)
 
 [Jenny Wem](https://github.com/wemmm)
+
+[Sam Pritchard](https://github.com/sampritchard)
+
+[Andrew Clarke](https://github.com/Dino892)
 
 ## How do Team MYTM do things?
 ```
@@ -113,3 +121,4 @@ We are not afraid of new technologies
 - [an amazing project using similar tech](https://github.com/ilarne/team-whiteboard)
 - [intro to canvas](https://www.w3schools.com/graphics/canvas_intro.asp)
 - [makin' shapes](https://github.com/simonsarris/Canvas-tutorials/blob/master/shapes.js)
+- UI colour scheme based on [Michael Jacobson](https://github.com/michaelbjacobson)'s Hawaiian shirts.
