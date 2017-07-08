@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let rectangle = document.getElementById("rectangle");
   let circle = document.getElementById("circle");
   let reset = document.getElementById("reset");
+  let clearLines = document.getElementById("clear_lines");
   let text = document.getElementById("text");
 
   htmlCanvas.addEventListener("selectstart", () => canvas.selectStart(event), false);
@@ -45,6 +46,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   reset.onclick = function() {
     canvas.reset();
+  };
+
+  clearLines.onclick = function() {
+    canvas.clearLines();
   };
 
 
