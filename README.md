@@ -52,16 +52,16 @@ We spent a good amount of time at the beginning of the project discussing user s
 Initial diagramming:
 
 
-![Diagramming](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/diagramming.jpg)
+![Diagramming](https://github.com/charlottebrf/mytm/blob/master/images/diagramming.jpg)
 
 
-![Diagramming](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/diagramming2.jpg)
+![Diagramming](https://github.com/charlottebrf/mytm/blob/master/images/diagramming2.jpg)
 
 
 We encountered a lot of entertaining glitches with our shapes- especially when trying to get them to display text:
 
 
-![Glitches](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/glitches1.png)
+![Glitches](https://github.com/charlottebrf/mytm/blob/master/images/glitches1.png)
 
 
 ## User Stories
