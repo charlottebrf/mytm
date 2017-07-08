@@ -36,6 +36,31 @@ You can clear lines but leave ideas on the canvas by clicking the 'Clear Lines' 
 
 An instruction sheet can be toggled with the '?' button.
 
+## Our Approach
+
+We spent a good amount of time at the beginning of the project discussing user stories and the most appropriate technologies to use to accomplish them. We ultimately settled on using Node.js for the server and backend, and HTML5 Canvas for the mind map itself- meaning we would be using JavaScript to interface with it and render lines and shapes. The user interface was made with CSS3 and a very small amount of JavaScript for toggling parts of the display.
+
+
+Initial diagramming:
+
+
+![Diagramming](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/diagramming.jpg)
+
+
+![Diagramming](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/diagramming2.jpg)
+
+
+![Diagramming](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/diagramming3.jpg)
+
+
+We encountered a lot of entertaining glitches with our shapes- especially when trying to get them to display text:
+
+
+![Glitches](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/glitches1.jpg)
+
+
+![Glitches](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/glitches2.jpg)
+
 ## User Stories
 
 ```
