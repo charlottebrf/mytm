@@ -20,13 +20,19 @@ MMM  M'  "MMMYMM   ""` YMMMb      YMMMb
 
 ## What is this cool thing?
 
-An interactive mind map! We are using Node.js, Express, Javascript, JQuery, Pug and HTML5 Canvas to make a board that you can add ideas to, then link your ideas to other ideas. Possibly with a snazzy interface.
+An interactive mind map! We are using Node.js, Express, Javascript ES6, JQuery, Pug and HTML5 Canvas to make a board that you can add ideas to, then link your ideas to other ideas. And it has a snazzy interface.
 
-We're testing with Mocha and Zombie and potentially Chai.
+We're testing with Mocha, Chai, Supertest and Zombie.
 
 ## How do I get in on this?
 
-Not deployed to web yet- watch this space! We may also potentially deploy via Electron.
+Clone this repository and navigate to the folder via your command line, then type:
+
+```
+node src/server.js
+```
+
+Then visit localhost:8000 in your web browser. Happy mapping!
 
 ## How do I use it?
 
@@ -40,7 +46,7 @@ An instruction sheet can be toggled with the '?' button.
 
 ## Our Approach
 
-We spent a good amount of time at the beginning of the project discussing user stories and the most appropriate technologies to use to accomplish them. We ultimately settled on using Node.js for the server and backend, and HTML5 Canvas for the mind map itself- meaning we would be using JavaScript to interface with it and render lines and shapes. The user interface was made with CSS3 and a very small amount of JavaScript for toggling parts of the display.
+We spent a good amount of time at the beginning of the project discussing user stories and the most appropriate technologies to use to accomplish them. We ultimately settled on using Node.js for the server and backend, and HTML5 Canvas for the mind map itself- meaning we would be using JavaScript ES6 to interface with it and render lines and shapes. The user interface was made with CSS3 and a very small amount of JavaScript for toggling parts of the display.
 
 
 Initial diagramming:
@@ -143,4 +149,4 @@ We are not afraid of new technologies
 - [an amazing project using similar tech](https://github.com/ilarne/team-whiteboard)
 - [intro to canvas](https://www.w3schools.com/graphics/canvas_intro.asp)
 - [makin' shapes](https://github.com/simonsarris/Canvas-tutorials/blob/master/shapes.js)
-- UI colour scheme based on [Michael Jacobson](https://github.com/michaelbjacobson)'s Hawaiian shirts.
+- [Michael Jacobson](https://github.com/michaelbjacobson)'s Hawaiian shirts, on which the UI colours are based.
