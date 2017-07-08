@@ -56,10 +56,10 @@ Initial diagramming:
 We encountered a lot of entertaining glitches with our shapes- especially when trying to get them to display text:
 
 
-![Glitches](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/glitches1.jpg)
+![Glitches](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/glitches1.png)
 
 
-![Glitches](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/glitches2.jpg)
+![Glitches](https://github.com/charlottebrf/mytm/blob/lovely-readme/images/glitches2.png)
 
 ## User Stories
 
