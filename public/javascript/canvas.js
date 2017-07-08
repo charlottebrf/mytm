@@ -173,10 +173,10 @@ class Canvas {
       this.renderAll();
 
       if (this.selection !== null) {
-        context.strokeStyle = this.selectionColor;
-        context.lineWidth = this.selectionWidth;
+        this.context.strokeStyle = this.selectionColor;
+        this.context.lineWidth = this.selectionWidth;
         let mySel = this.selection;
-        context.strokeRect(mySel.x, mySel.y, mySel.w, mySel.h);
+        this.context.strokeRect(mySel.x, mySel.y, mySel.w, mySel.h);
       }
     this.valid = true;
   }

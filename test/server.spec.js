@@ -1,5 +1,5 @@
 let request = require('supertest');
-describe('loading express', function() {
+describe('Loading express server tests', function() {
   let server;
   beforeEach(function() {
     delete require.cache[require.resolve('../src/server')];
